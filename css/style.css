@@ -1,0 +1,791 @@
+/* ==============================
+   RESET / BASE
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050505;
+  color: #f5f5f5;
+}
+
+/* ==============================
+   HEADER
+============================== */
+.header {
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 5, 5, 0.88);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.header h2 {
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+.header nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header nav a {
+  color: #d6d6d6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.header nav a:hover {
+  color: #d4af37;
+}
+
+/* ==============================
+   HERO
+============================== */
+.hero {
+  min-height: 100vh;
+  padding: 135px 8% 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+  background:
+    radial-gradient(circle at 85% 42%, rgba(212, 175, 55, 0.18), transparent 30%),
+    radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.08), transparent 25%),
+    linear-gradient(135deg, #050505 0%, #090909 55%, #15130a 100%);
+}
+
+.hero-text {
+  max-width: 680px;
+}
+
+.hero-text span {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  line-height: 1.12;
+  margin: 18px 0;
+}
+
+.hero-text p {
+  color: #cfcfcf;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 650px;
+}
+
+/* ==============================
+   BOTÕES
+============================== */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  padding: 12px 21px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #f7e7a0);
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.28);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #d4af37;
+  border: 1.5px solid #d4af37;
+}
+
+/* ==============================
+   FOTO HERO
+============================== */
+.hero-img {
+  position: relative;
+}
+
+.hero-img::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.38), transparent 65%);
+  filter: blur(12px);
+  z-index: 0;
+}
+
+.hero-img img {
+  position: relative;
+  z-index: 1;
+  width: 305px;
+  height: 305px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.28);
+}
+
+/* ==============================
+   SKILLS / TECNOLOGIAS
+============================== */
+.skills {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  background: rgba(37, 37, 37, 0.95);
+  overflow: visible;
+  position: relative;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.skills::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+  box-shadow:
+    0 0 5px #d4af37,
+    0 0 10px #d4af37,
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.slide-track {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  width: fit-content;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+.slide-track img {
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.25));
+  transition: 0.3s;
+}
+
+.slide-track img:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 10px #d4af37)
+    drop-shadow(0 0 20px #d4af37);
+}
+
+/* Tamanho individual das logos */
+.html-logo {
+  width: 90px !important;
+  height: 90px !important;
+}
+
+.css-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.js-logo {
+  width: 82px !important;
+  height: 82px !important;
+}
+
+.firebase-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.github-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.chatgpt-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.claude-logo {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.gemini-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.excel-logo,
+.word-logo {
+  width: 65px !important;
+  height: 65px !important;
+}
+
+/* ==============================
+   SEÇÕES
+============================== */
+.section {
+  padding: 70px 8%;
+  background: #050505;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #d4af37;
+  margin-bottom: 18px;
+}
+
+.section p {
+  color: #cfcfcf;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 750px;
+}
+
+/* ==============================
+   Projetos
+============================== */
+
+.projeto-card {
+  margin-top: 30px;
+  max-width: 760px;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(212, 175, 55, 0.05));
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.projeto-card h3 {
+  color: #f5f5f5;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.projeto-card p {
+  margin-bottom: 22px;
+}
+
+.projeto-card a {
+  color: #111;
+  background: linear-gradient(135deg, #d4af37, #f7e7a0);
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.projeto-card a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+}
+
+.projeto-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ==============================
+   RESPONSIVO
+============================== */
+@media (max-width: 850px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 6%;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 165px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .hero-text p {
+    font-size: 17px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-img img {
+    width: 235px;
+    height: 235px;
+  }
+
+  .skills {
+    height: 75px;
+  }
+
+  .slide-track {
+    gap: 45px;
+  }
+}
+
+/* ==============================
+   JORNADA / TIMELINE HORIZONTAL
+============================== */
+.jornada-section {
+  position: relative;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(212, 175, 55, 0.06),
+      transparent 60%
+    ),
+    #050505;
+}
+
+.jornada-section::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(212, 175, 55, 0.03),
+    rgba(212, 175, 55, 0.06),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.jornada-timeline {
+  margin-top: 55px;
+  position: relative;
+  display: flex;
+  gap: 34px;
+  overflow-x: auto;
+  padding: 70px 10px 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.jornada-timeline::-webkit-scrollbar {
+  height: 8px;
+}
+
+.jornada-timeline::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+}
+
+.jornada-timeline::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #d4af37, #f7e7a0);
+  border-radius: 999px;
+}
+
+.jornada-dot {
+  z-index: 4;
+}
+
+.jornada-item {
+  z-index: 2;
+}
+
+.jornada-dot {
+  z-index: 3;
+}
+
+.jornada-item {
+  position: relative;
+  min-width: 230px;
+  padding: 58px 22px 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+}
+
+.jornada-item:hover {
+  transform: translateY(-14px);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(212, 175, 55, 0.14);
+}
+
+.jornada-ano {
+  position: absolute;
+  top: -38px;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.jornada-dot {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #f7e7a0);
+  box-shadow:
+    0 0 0 7px rgba(212, 175, 55, 0.12),
+    0 0 22px rgba(212, 175, 55, 0.5);
+  z-index: 10;
+}
+
+.jornada-item:hover {
+  transform: translateY(-14px);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(212, 175, 55, 0.14);
+}
+
+.jornada-item:hover .jornada-dot {
+  transform: scale(1.35);
+  box-shadow:
+    0 0 0 10px rgba(212, 175, 55, 0.18),
+    0 0 25px rgba(212, 175, 55, 0.85),
+    0 0 45px rgba(212, 175, 55, 0.45);
+}
+
+.jornada-item:hover .jornada-ano {
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 22px rgba(212, 175, 55, 0.45);
+}
+
+.jornada-dot {
+  transition: 0.35s ease;
+}
+
+.jornada-item h3 {
+  color: #f5f5f5;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.jornada-item p {
+  font-size: 15.5px;
+  color: #cfcfcf;
+  line-height: 1.55;
+}
+
+.jornada-item.destaque {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.11),
+    rgba(255, 255, 255, 0.045)
+  );
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+/* ==============================
+   SOBRE MIM
+============================== */
+.sobre-section {
+  position: relative;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(212, 175, 55, 0.08), transparent 28%),
+    #050505;
+}
+
+.sobre-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  left: 0;
+
+  width: 100%;
+  height: 220px;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.08),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.sobre-texto {
+  margin-top: 28px;
+  max-width: 950px;
+  padding: 32px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(212, 175, 55, 0.06)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.sobre-texto p {
+  max-width: 100%;
+  margin-bottom: 18px;
+}
+
+.sobre-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.frase-impacto {
+  margin-top: 30px;
+  padding: 25px;
+
+  border-left: 4px solid #d4af37;
+
+  background: rgba(212,175,55,.05);
+
+  font-size: 22px;
+  font-style: italic;
+}
+
+/* ==============================
+   ANIMAÇÕES
+============================== */
+
+/* Partículas douradas no fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(212, 175, 55, 0.7) 1px, transparent 1px);
+
+  background-size: 180px 180px;
+
+  opacity: 0.12;
+
+  pointer-events: none;
+  z-index: -1;
+
+  animation: particlesMove 40s linear infinite;
+}
+
+@keyframes particlesMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-180px);
+  }
+}
+
+/* Foto respirando */
+.hero-img img {
+  animation: photoBreath 5s ease-in-out infinite;
+}
+
+@keyframes photoBreath {
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+/* Aura girando atrás da foto */
+.hero-img::before {
+  animation: rotateGlow 12s linear infinite;
+}
+
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Títulos brilhando suavemente */
+.section h2 {
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%,100% {
+    text-shadow: none;
+  }
+
+  50% {
+    text-shadow:
+      0 0 10px rgba(212, 175, 55, 0.4),
+      0 0 20px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Cards da jornada */
+.jornada-item {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.jornada-item:hover {
+  transform: translateY(-14px);
+}
+
+/* Bolinha da timeline */
+.jornada-dot {
+  transition: 0.35s ease;
+}
+
+.jornada-item:hover .jornada-dot {
+  transform: scale(1.3);
+
+  box-shadow:
+    0 0 0 10px rgba(212, 175, 55, 0.15),
+    0 0 25px rgba(212, 175, 55, 0.7),
+    0 0 45px rgba(212, 175, 55, 0.4);
+}
+
+/* Botões */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* ==============================
+   ANIMAÇÃO HEADER / NAV
+============================== */
+.header {
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.08),
+    0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -100%;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    #f7e7a0,
+    transparent
+  );
+
+  animation: navGlow 4s linear infinite;
+}
+
+@keyframes navGlow {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.header nav a {
+  position: relative;
+}
+
+.header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(90deg, #d4af37, #f7e7a0);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+
+  transition: 0.3s;
+}
+
+.header nav a:hover::after {
+  width: 100%;
+}
