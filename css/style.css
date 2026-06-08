@@ -185,6 +185,15 @@ body {
   width: 100%;
   overflow: hidden;
   cursor: grab;
+  user-select: none;
+}
+
+.slider.dragging {
+  cursor: grabbing;
+}
+
+.slider.dragging a {
+  pointer-events: none;
 }
 
 .slide-track {
@@ -212,6 +221,11 @@ body {
 }
 
 /* Tamanho individual das logos */
+.vscode-logo {
+  width: 60px !important;
+  height: 60px !important;
+}
+
 .html-logo {
   width: 90px !important;
   height: 90px !important;
@@ -228,6 +242,16 @@ body {
 }
 
 .firebase-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.emailjs-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.git-logo {
   width: 100px !important;
   height: 100px !important;
 }

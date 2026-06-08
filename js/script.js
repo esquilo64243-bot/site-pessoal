@@ -1,20 +1,35 @@
 const slider = document.querySelector(".slider");
 const slideTrack = document.querySelector(".slide-track");
 
+// duplica as skills automaticamente
+slideTrack.innerHTML += slideTrack.innerHTML;
+
 let posicao = 0;
 let velocidade = -0.45;
 
+let arrastando = false;
+let inicioX = 0;
+let posicaoInicial = 0;
+let alvoPosicao = 0;
+
 function animarSkills() {
-  posicao += velocidade;
+  if (!arrastando) {
+    posicao += velocidade;
+    alvoPosicao = posicao;
+  } else {
+    posicao += (alvoPosicao - posicao) * 0.08;
+  }
 
   const metade = slideTrack.scrollWidth / 2;
 
-  if (Math.abs(posicao) >= metade) {
-    posicao = 0;
+  if (posicao <= -metade) {
+    posicao += metade;
+    alvoPosicao += metade;
   }
 
-  if (posicao > 0) {
-    posicao = -metade;
+  if (posicao >= 0) {
+    posicao -= metade;
+    alvoPosicao -= metade;
   }
 
   slideTrack.style.transform = `translateX(${posicao}px)`;
@@ -25,6 +40,27 @@ function animarSkills() {
 slider.addEventListener("wheel", (e) => {
   e.preventDefault();
   posicao -= e.deltaY * 0.9;
+  alvoPosicao = posicao;
+});
+
+slider.addEventListener("mousedown", (e) => {
+  arrastando = true;
+  inicioX = e.clientX;
+  posicaoInicial = posicao;
+  alvoPosicao = posicao;
+  slider.classList.add("dragging");
+});
+
+window.addEventListener("mousemove", (e) => {
+  if (!arrastando) return;
+
+  const movimento = e.clientX - inicioX;
+  alvoPosicao = posicaoInicial + movimento;
+});
+
+window.addEventListener("mouseup", () => {
+  arrastando = false;
+  slider.classList.remove("dragging");
 });
 
 animarSkills();
