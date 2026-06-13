@@ -373,3 +373,96 @@ body {
   background: #050505;
   display: block;
 }
+
+/* RECONHECIMENTO */
+
+.reconhecimento {
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #d4af37;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.premiacao-grid {
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.premiacao-card {
+  padding: 25px;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.05),
+    rgba(212,175,55,0.05)
+  );
+
+  border: 1px solid rgba(212,175,55,.2);
+
+  transition: .3s;
+}
+
+.premiacao-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.35),
+    0 0 25px rgba(212,175,55,.15);
+}
+
+.premiacao-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.premiacao-card h3 {
+  color: #d4af37;
+  margin-bottom: 12px;
+}
+
+.premiacao-card p {
+  color: #cfcfcf;
+}
+
+@media (max-width: 850px) {
+  .premiacao-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-premio {
+  background: linear-gradient(135deg, #d4af37, #f7e7a0);
+  color: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-premio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.3),
+    transparent
+  );
+
+  transform: translateX(-100%);
+  animation: brilhoPremio 3s infinite;
+}
+
+@keyframes brilhoPremio {
+  100% {
+    transform: translateX(100%);
+  }
+}

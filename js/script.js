@@ -51,6 +51,25 @@ slider.addEventListener("mousedown", (e) => {
   slider.classList.add("dragging");
 });
 
+slider.addEventListener("touchstart", (e) => {
+  arrastando = true;
+  inicioX = e.touches[0].clientX;
+  posicaoInicial = posicao;
+  slider.classList.add("dragging");
+});
+
+slider.addEventListener("touchmove", (e) => {
+  const xAtual = e.touches[0].clientX;
+  const distancia = xAtual - inicioX;
+
+  posicao = posicaoInicial + distancia;
+});
+
+slider.addEventListener("touchend", () => {
+  arrastando = false;
+  slider.classList.remove("dragging");
+});
+
 window.addEventListener("mousemove", (e) => {
   if (!arrastando) return;
 
