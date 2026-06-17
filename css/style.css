@@ -248,6 +248,16 @@ body {
   height: 100px !important;
 }
 
+.supabase-logo {
+  width: 155px !important;
+  height: 155px !important;
+}
+
+.vercel-logo {
+  width: 100px !important;
+  height: 100px !important;
+}
+
 .emailjs-logo {
   width: 100px !important;
   height: 100px !important;
@@ -259,8 +269,8 @@ body {
 }
 
 .github-logo {
-  width: 100px !important;
-  height: 100px !important;
+  width: 120px !important;
+  height: 120px !important;
 }
 
 .chatgpt-logo {
@@ -269,13 +279,13 @@ body {
 }
 
 .claude-logo {
-  width: 200px !important;
-  height: 200px !important;
+  width: 180px !important;
+  height: 180px !important;
 }
 
 .gemini-logo {
-  width: 100px !important;
-  height: 100px !important;
+  width: 120px !important;
+  height: 120px !important;
 }
 
 .excel-logo,

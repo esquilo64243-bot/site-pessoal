@@ -466,3 +466,46 @@ body {
     transform: translateX(100%);
   }
 }
+
+@media (max-width: 700px) {
+  .project-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .project-buttons .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .project-hero {
+    text-align: center;
+    min-height: auto;
+    padding: 125px 6% 50px;
+  }
+
+  .project-hero h1 {
+    font-size: 40px;
+  }
+
+  .project-hero p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-header {
+    padding: 16px 6%;
+  }
+
+  .project-header h2 {
+    font-size: 18px;
+  }
+
+  .back-link {
+    font-size: 15px;
+  }
+}
